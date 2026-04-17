@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { LazyThreeBackground } from "./LazyThreeBackground";
 
 export const GlobalBackground = () => {
   const [particles, setParticles] = useState<Array<{
@@ -160,6 +161,9 @@ export const GlobalBackground = () => {
           backfaceVisibility: 'hidden'
         }}
       />
+      
+      {/* Lazy-loaded Three.js Background */}
+      <LazyThreeBackground />
     </div>
   );
 };

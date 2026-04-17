@@ -10,7 +10,7 @@ import { useState } from "react";
 import { LoadingSpinner } from "./LoadingSpinner";
 
 export const LiveDemos = () => {
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0]));
 
   const handleImageLoad = (index: number) => {
     setLoadedImages(prev => new Set(prev).add(index));
@@ -57,9 +57,11 @@ export const LiveDemos = () => {
                   className="w-full h-full object-cover"
                   width={600}
                   height={400}
-                  quality={75}
+                  quality={85}
+                  priority={idx === 0}
                   onLoad={() => handleImageLoad(idx)}
-                  loading="lazy"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </motion.div>
               <motion.div 
