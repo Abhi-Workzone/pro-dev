@@ -23,7 +23,7 @@ export const Section = ({ children, className, id, containerClassName, style }: 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px", amount: 0.1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className={cn("max-w-7xl mx-auto", containerClassName)}
         style={{ 
           willChange: 'transform, opacity',
