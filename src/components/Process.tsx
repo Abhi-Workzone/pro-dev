@@ -25,7 +25,7 @@ export const Process = () => {
         centered
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 sm:gap-12 mt-16 sm:mt-20">
         {CONTENT.howIWork.map((step, idx) => {
           const Icon = ICON_MAP[step.icon as string];
           return (
@@ -38,22 +38,22 @@ export const Process = () => {
               className="relative group"
             >
               {/* The Card Component */}
-              <div className="relative pt-12 pb-16 px-6 bg-white/[0.03] border border-white/5 rounded-[40px] h-full flex flex-col items-center text-center backdrop-blur-md transition-all duration-500 group-hover:bg-white/[0.06] group-hover:border-white/20">
+              <div className="relative pt-10 sm:pt-12 pb-14 sm:pb-16 px-4 sm:px-6 bg-white/[0.03] border border-white/5 rounded-[32px] sm:rounded-[40px] h-full flex flex-col items-center text-center backdrop-blur-md transition-all duration-500 group-hover:bg-white/[0.06] group-hover:border-white/20">
                 
                 {/* Top Badge (Floating) */}
-                <div className={`absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full ${step.color} p-0.5 shadow-xl shadow-black/40`}>
+                <div className={`absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full ${step.color} p-0.5 shadow-xl shadow-black/40`}>
                     <div className="w-full h-full rounded-full bg-black/20 flex items-center justify-center text-white">
-                        {Icon && <Icon size={24} strokeWidth={1.5} />}
+                        {Icon && <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />}
                     </div>
                 </div>
 
-                <h3 className="text-xl font-bold mb-4 mt-4 tracking-tight leading-tight px-2">{step.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed font-light">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 mt-3 sm:mt-4 tracking-tight leading-tight px-2">{step.title}</h3>
+                <p className="text-white/40 text-xs sm:text-sm leading-relaxed font-light">
                   {step.description}
                 </p>
 
                 {/* Bottom Step Indicator */}
-                <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full ${step.color} text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`absolute -bottom-5 sm:-bottom-6 left-1/2 -translate-x-1/2 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full ${step.color} text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-300`}>
                   Step 0{step.step}
                 </div>
               </div>
